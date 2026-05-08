@@ -13,26 +13,25 @@ $products = $productInstance->displayProducts($pdo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Category</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($products as $product): ?>
-            <tr>
-                <td><?= $product["product_name"]; ?></td>
-                <td><?= $product["product_price"]; ?></td>
-                <td><?= $product["product_category"]; ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-    </table>
+
+<div class="row">
+  <?php foreach ($products as $product): ?>
+    <div class="col-md-4 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><?= $product["product_name"]; ?></h5>
+          <p class="card-text"><?= $product["product_price"]; ?></p>
+          <p class="card-text"><?= $product["product_category"]; ?></p>
+          <a href="product_details.php?id=<?= $product["product_id"]; ?>" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
