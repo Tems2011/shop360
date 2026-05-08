@@ -5,6 +5,16 @@ class Product {
         $sql = "SELECT * FROM products";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
-        return $stmt->FetchAll(PDO::FETCH_ASSOC);
+        $products = $stmt->FetchAll(PDO::FETCH_ASSOC);
+        return $products;
+    }
+
+
+    public function getProductById($pdo, $id) {
+    $sql = "SELECT * FROM products WHERE product_id = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $product;
     }
 }
