@@ -1,0 +1,89 @@
+
+    body {
+      background-color: #0b0b0b;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #000;
+      border-bottom: 1px solid #b08d57;
+    }
+
+    .navbar-brand {
+      color: #b08d57 !important;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav-link {
+      color: #f5f5f5 !important;
+    }
+
+    .nav-link:hover {
+      color: #b08d57 !important;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(180deg, #000, #1a0f14);
+    }
+
+    .hero h1 {
+      color: #b08d57;
+      font-size: 50px;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      color: #c7c7c7;
+    }
+
+    .card {
+      background-color: #111;
+      border: 1px solid #b08d57;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(176, 141, 87, 0.2);
+    }
+
+    .card-title {
+      color: #b08d57;
+    }
+
+    .card-img-top {
+      height: 260px;
+      object-fit: cover;
+      border-bottom: 1px solid #b08d57;
+    }
+
+    .btn-outline-warning {
+      border-color: #b08d57;
+      color: #b08d57;
+    }
+
+    .btn-outline-warning:hover {
+      background-color: #b08d57;
+      color: #000;
+    }
+
+    footer {
+      background-color: #000;
+      border-top: 1px solid #b08d57;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      color: #aaa;
+    }
+
+    #navMenu {
+      color: #b08d57;
+
+    }
+
+    

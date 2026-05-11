@@ -27,8 +27,8 @@ $user = new User();
 $account = $user->login($pdo, $email, $password);
 if($account){
     $_SESSION['success'] = 'Logged in successfully';
-    $_SESSION['user_email'] = $account['email'];
-    $_SESSION['account_id'] = $account['id'];
+    $_SESSION['email'] = $account['email'];
+    $_SESSION['id'] = $account['id'];
     header('Location:../products.php');
     exit();
 }

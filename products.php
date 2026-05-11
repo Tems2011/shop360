@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "config/db_connect.php";
 require_once "classes/Product.php";
 
@@ -16,7 +16,15 @@ $products = $productInstance->displayProducts($pdo);
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
+  <?php
+session_start();
 
+if (!isset($_SESSION['user'])){
+    $_SESSION['error']="Please log in first";
+    header("location:login.php");
+    exit;
+}
+?>
 <div class="row">
   <?php foreach ($products as $product): ?>
     <div class="col-md-4 mb-3">
@@ -25,7 +33,7 @@ $products = $productInstance->displayProducts($pdo);
           <h5 class="card-title"><?= $product["product_name"]; ?></h5>
           <p class="card-text"><?= $product["product_price"]; ?></p>
           <p class="card-text"><?= $product["product_category"]; ?></p>
-          <a href="product_details.php?id=<?= $product["product_id"]; ?>" class="btn btn-primary">View Details</a>
+          <a href="product_details.php?id=<?= $product["id"]; ?>" class="btn btn-primary">View Details</a>
         </div>
       </div>
     </div>
