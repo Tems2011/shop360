@@ -1,7 +1,7 @@
 <?php
 class User {
     public function existingEmail($pdo, $email){
-        $sql = "SELECT email FROM account WHERE email = ?";
+        $sql = "SELECT email FROM accounts WHERE email = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$email]);
         $account = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -11,7 +11,7 @@ class User {
 
 public function createAccount($pdo, $email, $password){
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO account (email,password)
+    $sql = "INSERT INTO accounts (email,password)
     VALUES (?,?)";
     $stmt = $pdo->prepare($sql);
     $result = $stmt->execute([$email,$hashedPassword]);
@@ -19,7 +19,7 @@ public function createAccount($pdo, $email, $password){
     }
     public function login($pdo, $email, $password){
         $sql = "
-        SELECT * FROM account WHERE email = ?";
+        SELECT * FROM accounts WHERE email = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$email]);
         $account = $stmt->fetch(PDO::FETCH_ASSOC);

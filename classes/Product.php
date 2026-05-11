@@ -11,7 +11,7 @@ class Product {
 
 
     public function getProductById($pdo, $id) {
-    $sql = "SELECT * FROM products WHERE product_id = ?";
+    $sql = "SELECT * FROM products WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
