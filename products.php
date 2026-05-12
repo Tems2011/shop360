@@ -1,10 +1,17 @@
 <?php
+session_start();
+if(!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+};
 
 require_once "config/db_connect.php";
 require_once "classes/Product.php";
 
-$productInstance= new Product();
+$productInstance = new Product();
+
 $products = $productInstance->displayProducts($pdo);
+
 ?>
 
 <!DOCTYPE html>
@@ -12,24 +19,61 @@ $products = $productInstance->displayProducts($pdo);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>VELVET STREET | Products</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 
-<div class="row">
-  <?php foreach ($products as $product): ?>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title"><?= $product["product_name"]; ?></h5>
-          <p class="card-text"><?= $product["product_price"]; ?></p>
-          <p class="card-text"><?= $product["product_category"]; ?></p>
-          <a href="product_details.php?id=<?= $product["product_id"]; ?>" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>VELVET STREET</h1>
+        <p>Luxury Fashion & Streetwear Collection</p>
     </div>
-  <?php endforeach; ?>
+
+    <!-- PRODUCTS -->
+    <div class="row">
+
+        <?php foreach($products as $product): ?>
+
+            <div class="col-md-4 mb-4">
+
+                <div class="card h-100 p-3">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            <?= $product['product_name']; ?>
+                        </h5>
+
+                        <p class="price">
+                            ₦<?= $product['product_price']; ?>
+                        </p>
+
+                        <p class="text-secondary">
+                            <?= $product['product_category']; ?>
+                        </p>
+
+                        <a href="product_details.php?id=<?= $product['id']; ?>" class="btn btn-primary w-100">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        <?php endforeach; ?>
+
+    </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

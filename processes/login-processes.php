@@ -5,37 +5,50 @@ require_once "../config/db_connect.php";
 require_once "../classes/Validation.php";
 require_once "../classes/User.php";
 
+//I will validate format
+//I will validate if email exists in the database
+// I will validate if password is correct for the email provided
+// I will log the user in if all validations are passed
+
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
 $validation = new Validate();
 
-$existingEmail = $validation->validateEmail($email);
-$passwordStrength = $validation->validatePasswordStrength($password);
+ 
+// VALIDATE EMAIL
+$emailError = $validation->validateEmail($email);
 
-if($existingEmail){
-    $_SESSION['error']= 'Email is not valid';
-    header('Location:../login.php');
+if($emailError){
+
+    $_SESSION['error'] = $emailError;
+
+    header("Location:../login.php");
     exit();
 }
-if($passwordStrength){
-    $_SESSION['error']= 'Password must be between 8 and 15 characters long';
-    header('Location:../login.php');
-    exit();
-}
+
+//validate for existing email
 $user = new User();
-$account = $user->login($pdo, $email, $password);
-if($account){
-    $_SESSION['success'] = 'Logged in successfully';
-    $_SESSION['user_email'] = $account['email'];
-    $_SESSION['account_id'] = $account['id'];
-    header('Location:../products.php');
-    exit();
-}
-else{
-    $_SESSION['error'] = 'Invalid Email or Password';
-    header('Location:../login.php');
+$existingEmail = $user->existingEmail($pdo, $email); //is used to check if the email exists in the database 
+
+if(!$existingEmail){
+    $_SESSION['error'] = "Email does not exist";
+    header("Location:../login.php");
     exit();
 }
 
-?>
+//validate if password matches the email provided
+$account = $user->login($pdo, $email, $password);
+if (!$account){
+    $_SESSION['error'] = "Invalid email or password";
+    header("Location:../login.php");
+    exit();
+}
+    $_SESSION['user_id'] = $account['id'];
+
+    header("Location:../products.php");
+    exit();
+
+
+

@@ -32,8 +32,8 @@ if(isset($_SESSION["error"])){
     <input type="password" class="form-control mb-3" name="confirm_password" required>
 <button type = "submit" class="btn btn-primary"> Submit</button>
     </div>
+   
 </form>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
