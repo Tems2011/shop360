@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+
+
+
 require_once "config/db_connect.php";
 require_once "classes/Product.php";
 
