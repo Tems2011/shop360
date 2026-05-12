@@ -12,6 +12,8 @@ $confirm_password = $_POST['confirm_password'];
 $validation = new Validate();
 
 
+
+
 // VALIDATE EMAIL
 $emailError = $validation->validateEmail($email);
 

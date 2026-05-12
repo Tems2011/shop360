@@ -15,5 +15,4 @@ class Validate {
         if(strlen($password) < 8 || strlen($password) > 15){
             return "Password characters must be greater than 8 and less than 15";
         }}
-    
-}
+    }

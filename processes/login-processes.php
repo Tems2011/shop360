@@ -4,7 +4,7 @@ session_start();
 require_once "../config/db_connect.php";
 require_once "../classes/Validation.php";
 require_once "../classes/User.php";
-
+//
 //I will validate format
 //I will validate if email exists in the database
 // I will validate if password is correct for the email provided
@@ -15,6 +15,8 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 $validation = new Validate();
+
+
 
  
 // VALIDATE EMAIL

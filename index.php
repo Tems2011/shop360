@@ -14,7 +14,7 @@
   <!-- LOGO -->
   <div class="top-logo">
     <img src="assets/images/logo.png" alt="logo" width="150" height="150" class="d-inline-block align-text-top" id="logo">
-    <h1>VELLET STREET</h1>
+    <h1>VELVET STREET</h1>
     <p>LUXURY FASHION & STREETWEAR</p>
   </div>
 
