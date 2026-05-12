@@ -1,0 +1,88 @@
+body {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+            url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .auth-box {
+            width: 100%;
+            max-width: 420px;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 14px;
+            padding: 35px;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .brand {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .brand h1 {
+            font-size: 28px;
+            color: gold;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+
+        .brand p {
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .page-title h3 {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .form-control {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            color: #000;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #d4af37;
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 10px;
+            color: lightgreen;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
