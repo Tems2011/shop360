@@ -24,6 +24,13 @@ if($passwordcheck){
     exit();
 }
 
+if($passwordStrength){
+    $_SESSION['error']= 'Password must be between 8 and 15 characters long';
+    header('Location:../registration.php');
+    exit();
+}
+
+
 $user = new User();
 $existingEmail = $user->existingEmail($pdo, $email);
 if($existingEmail){

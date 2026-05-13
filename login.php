@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +10,6 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
-<?php
-if(isset($_SESSION["success"])){
-    echo $_SESSION["success"];
-    unset ($_SESSION["success"]);
-}
-?>
 <h3 class='text-primary text-center'>Login</h3>
     <form action="processes/login-processes.php" method="POST">
     <div class="container">
