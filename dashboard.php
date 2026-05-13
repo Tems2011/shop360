@@ -30,15 +30,6 @@
 
 <!-- Main -->
 <div class="main">
-    <div class="profile-card">
-    <h2>Welcome 👋</h2>
-
-    <p><strong>First Name:</strong> <?= $user['firstname'] ?></p>
-    <p><strong>Surname:</strong> <?= $user['surname'] ?></p>
-    <p><strong>Phone:</strong> <?= $user['phone'] ?></p>
-</div>
-
-
  <div class="header">
         <p>Manage your profile, wishlist and shopping activity</p>
     </div>
