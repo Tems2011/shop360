@@ -1,0 +1,492 @@
+Delivered-To: udaganazareth4@gmail.com
+Received: by 2002:a05:7300:ec08:b0:2c1:5b21:ddc6 with SMTP id ow8csp3184362dyb;
+        Wed, 13 May 2026 01:54:54 -0700 (PDT)
+X-Received: by 2002:a17:907:e149:b0:ba6:cb4c:bd3 with SMTP id a640c23a62f3a-bd3bf7784demr94200766b.11.1778662494149;
+        Wed, 13 May 2026 01:54:54 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1778662494; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=hE6+r6GkuOWOkR7cTzaWL3QxyJq6q77fR4Y8lN3GzB5BFHcftm6wvs5Jyp8K3+8NJx
+         WbDl8/PC4dMtklYOlYXS47qfNq00bHnjI5FngtQAJ5HrnFFkxPztEs7Ft65CLhl+WzGf
+         s7wwCUwv2bJmccm9eFdBw3FmnT+2ys0qS2yzVooiLdt+ea1kxAP39HKIAUoZ4lWVvli5
+         Gx8o6n2/ZDIOPgDJgHiPhdXwDISk8gQsswgmJ0e9+Z04e24ppP5l+Q8peQs1X5PBc71I
+         mxLKSHKFaaBUI1IvF1MbtnYSrN/vZQSfL5MFDriL9fWqVK7oWpnv8BPAhPARGKUnonOj
+         Ay4w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=wXOKWNbpy1wTMaF2TRlGxHpMp2crFhihnVgw+QOUKvE=;
+        fh=4slvvZwRHwrqCWLTcrqohQmgEh5cuwlXb7CM3bYYRcE=;
+        b=A137IqY8LzoIuFN3hEyCbnLSHDfoeASMtGwTu4P4WABzZrdtiL7Epl+4bQFbnXuawA
+         nszyy2XbBfGZfsjyHkyxHQv3FROUd3mLf0MxjNZakSetEVySJGMsxRnn7rE7bJ2IthZg
+         /kdyJH5JESiIxQaFIfEqd3L5ebOLsg2Htihziwva6J/8ytAJgnd2YSBlaYbgTTVdi03O
+         Bc9Q45bGYkqcOARTcIfolmAjHn9mYrX0sP1m0mHzZ8RJ82U8CA9tYWCKrGztoQ6nUps8
+         9Nxl1xdGal2Y3MjCT2UKZ5plULIg5YQV29zEGxgTICEMJ5ecZlc0N2Q0Ew2ft0lzR2gU
+         onpQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20251104 header.b=T7acLhmz;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of jewel182011@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=jewel182011@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <jewel182011@gmail.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id a640c23a62f3a-bd27918668asor137084166b.1.2026.05.13.01.54.53
+        for <udaganazareth4@gmail.com>
+        (Google Transport Security);
+        Wed, 13 May 2026 01:54:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jewel182011@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20251104 header.b=T7acLhmz;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of jewel182011@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=jewel182011@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1778662493; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Mqycm8KPqUSGzimbqXXc0AyMF8rReAP1b2l5pW1hWNEuV2reE22o+NVIUKiNtjfSUS
+         yRJwLimhDOE+YGQSC1LbRKYgJQWRYkMVohXxz+U9jKAmLLMn3sQwc3na6WRBtl7m8QTG
+         HV0yeFjfr/lK3AsGJymDWleKlSTpP2pcNroDwVCNA0FBBks/7g5PMGdiITpgNZ5Q9GWX
+         v1SBWTRP/zEaYjyg4DtGdL+c8fezCCalJUplleCn8kBAS6HNL6jrU7AVqgQag564p6M5
+         6Hb32G6uxAHJ+huvX2APKVHq5huTX9z6W8ow7Gnm3gnGTU4Xq+SOTG2kWJLM/30EwV/h
+         AFbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=wXOKWNbpy1wTMaF2TRlGxHpMp2crFhihnVgw+QOUKvE=;
+        fh=4slvvZwRHwrqCWLTcrqohQmgEh5cuwlXb7CM3bYYRcE=;
+        b=TAvG58bSpCSzezXDz2FHv5uAj7laa72GwSXGJfY2ji1iJNJE5UhY7TEPSzw+AOQjkk
+         HvE9AOhd6M4ZiSURaBl5yiYbRBwTCIFvM0RTC+YHvKRMsq6Pc0VzmJQUbGMaDxflbx1M
+         zK/5j7e+GagXslXlsST2kIzMjC7hKPGbqSgjRqfUqpM9yQENqf5wR4UrMhNYhd3mW4Uw
+         kW+0CysTVcbpZoNrhLYluSoRMEfNs2jeYRRtbY6T/1KzAWIKyZdW80jD5Sn2eswtjL89
+         t3964ZWal+sS+49COP9/r0Rrp58+v/7DF0bOJtFVH9RnD/L73UPk3eFFpXDV6N9OdMPB
+         KX2A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1778662493; x=1779267293; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=wXOKWNbpy1wTMaF2TRlGxHpMp2crFhihnVgw+QOUKvE=;
+        b=T7acLhmz97A7nnyssEOkyPfTz7LmBJZ4nD4ZJJIfCXwvvzrdhNuhHYy+R/J3IjWCcR
+         qAGnUVi9Y6h9DxN/knx+ey4YHchfa1quf2PwlzuBvqc6f3vgUea3Y/r5x8xPc/haU8kH
+         9Q1cv+lN7WC6FiimzUJMb1im0S4SK8T7018ewuD2IyObk/qR78o89s8KwPNEcgIyIdk9
+         de9XK3wvupLrOH0wcsVtg992gTn8c/PEWMQPrOmYhFCanTy2deSPqH5zvTu7NK7+eCaf
+         TBq2oL/mW1q/zaJHwDzXaUZ3WocbtJae4sMYrDYkyyOR8UCrU/yVsQ58lD29McUPFXFv
+         FkEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1778662493; x=1779267293;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wXOKWNbpy1wTMaF2TRlGxHpMp2crFhihnVgw+QOUKvE=;
+        b=EPfztJlhhBh8sDa2PpuWO7D6lfou68HgpZcswWrZVVlpVhdDhyxbhOaf6+aUWJGflJ
+         qlUEi5JfWC3+Hvz+mPHJ0MkvR6ZXgCbUyHbbr5bvFjbAbMAwah8J9ugx5ZP8g+LqHGmp
+         bnpDrFqRRMzRtXHaK01kXVWcyCE2WqBET41iO+LeeQUmnwp8pmCMZhWEN30DwkMUUk0U
+         FzSm5tiEGnZvBJXfrJ8sXvsQhpzKV62GGUytuJe1tGfGT9RjsjwdIMjY9riUMUAzl91F
+         PKJ0dMwbOhf94TWjIOm23/LjRkg4f7alXWLPwBmV/RSPB7WKwhEjntful2MAFhMJ1DfV
+         CBMg==
+X-Gm-Message-State: AOJu0Yx7dpKTCDzs7u/LOaof2gnXFDi47Jk3x1N98oJWgfgzxdFAUiyw
+	P5vGdNrxnBuVROGliussrOxztBpD5RXCPGEs3nZd5YP5r04zHuQePFG/Bz5uAJ4CDuAwJKswAnZ
+	UTc/RHqJrwf7NBq2r4xQxCtbo+I/jcLQsH25OaEA=
+X-Gm-Gg: Acq92OFavVcejVOueZBVboVQSV0NnPHTgoueZ8wTNsO7on8itSemsXrqDtswJzWNTLv
+	yDLt5VH4aK5oSbnkpuUg1y6WpKru9a13aVICRZHxNovsZE5HEhnepggpp/3TLedYFE35ZnjzGec
+	xvuFuWtP7XUQlyDnw2Z+0cq6TUtuBp78Kmso/NG2cZW/Z8BzypBRDjQBGAtI8sXG53SWjV93oaq
+	GXm6mqCL3IMdY520iihqBjoEoTL7XNwXSvRfS4fhhugCq52F9QC92a55Qn663f0LDRFoq+RdhJf
+	tbCrKeZ8gQ==
+X-Received: by 2002:a17:906:ef08:b0:bc6:7238:bd4e with SMTP id
+ a640c23a62f3a-bd3bf0a300bmr146418966b.5.1778662492972; Wed, 13 May 2026
+ 01:54:52 -0700 (PDT)
+MIME-Version: 1.0
+From: Jewel <jewel182011@gmail.com>
+Date: Wed, 13 May 2026 09:54:39 +0100
+X-Gm-Features: AVHnY4JpUuolIDNFZEvPaGYMDByIS7rYg6qu13vtGGPEgCPjN4SHtkPKaR_YJtI
+Message-ID: <CA+irx=C-aGgQsZWWDgyMep2-KukxOeuu+wTQYTVymA-agYPgyg@mail.gmail.com>
+Subject: 
+To: "udaganazareth4@gmail.com" <udaganazareth4@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000011a9e00651af2292"
+
+--00000000000011a9e00651af2292
+Content-Type: text/plain; charset="UTF-8"
+
+<?php
+
+class CustomerProfile {
+
+    // DISPLAY PROFILE FORM
+    function displayProfileForm(){
+
+        echo "
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+
+            <title>Customer Profile</title>
+
+            <link
+            href='
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css'
+            rel='stylesheet'
+            >
+
+            <style>
+
+                body{
+
+                    background:#111;
+                    color:white;
+
+                }
+
+                .profile-box{
+
+                    background:#1c1c1c;
+                    border:2px solid gold;
+                    border-radius:15px;
+                    padding:30px;
+                    margin-top:50px;
+                    box-shadow:0px 0px 15px rgba(255,215,0,0.3);
+
+                }
+
+                .title{
+
+                    color:gold;
+                    font-weight:bold;
+
+                }
+
+                .btn-save{
+
+                    background:gold;
+                    color:black;
+                    font-weight:bold;
+
+                }
+
+                .btn-save:hover{
+
+                    background:darkgoldenrod;
+                    color:white;
+
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+        <div class='container'>
+
+            <div class='row justify-content-center'>
+
+                <div class='col-md-7'>
+
+                    <div class='profile-box'>
+
+                        <h2 class='title text-center mb-4'>
+
+                            Customer Profile
+
+                        </h2>
+
+                        <form
+                            action='processes/profileprocess.php'
+                            method='POST'
+                        >
+
+                            <div class='mb-3'>
+
+                                <label>
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type='text'
+                                    name='fullname'
+                                    class='form-control'
+                                    placeholder='Enter Full Name'
+                                >
+
+                            </div>
+
+                            <div class='mb-3'>
+
+                                <label>
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type='text'
+                                    name='phone'
+                                    class='form-control'
+                                    placeholder='Enter Phone Number'
+                                >
+
+                            </div>
+
+                            <div class='mb-3'>
+
+                                <label>
+                                    Gender
+                                </label>
+
+                                <select
+                                    name='gender'
+                                    class='form-control'
+                                >
+
+                                    <option value=''>
+                                        Select Gender
+                                    </option>
+
+                                    <option>
+                                        Male
+                                    </option>
+
+                                    <option>
+                                        Female
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <div class='mb-3'>
+
+                                <label>
+                                    Address
+                                </label>
+
+                                <textarea
+                                    name='address'
+                                    class='form-control'
+                                    placeholder='Enter Address'
+                                ></textarea>
+
+                            </div>
+
+                            <div class='mb-3'>
+
+                                <label>
+                                    Country
+                                </label>
+
+                                <input
+                                    type='text'
+                                    name='country'
+                                    class='form-control'
+                                    placeholder='Enter Country'
+                                >
+
+                            </div>
+
+                            <button
+                                type='submit'
+                                class='btn btn-save w-100'
+                            >
+
+                                Save Profile
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </body>
+
+        </html>
+
+        ";
+
+    }
+
+}
+
+$profile = new CustomerProfile();
+
+$profile->displayProfileForm();
+
+?>
+
+--00000000000011a9e00651af2292
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+PGRpdiBkaXI9ImF1dG8iPiZsdDs/cGhwPGJyPjxicj5jbGFzcyBDdXN0b21lclByb2ZpbGUgezxi
+cj48YnI+wqDCoMKgIC8vIERJU1BMQVkgUFJPRklMRSBGT1JNPGJyPsKgwqDCoCBmdW5jdGlvbiBk
+aXNwbGF5UHJvZmlsZUZvcm0oKXs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgIGVjaG8gJnF1b3Q7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoCAmbHQ7IURPQ1RZUEUgaHRtbCZndDs8YnI+PGJyPsKgwqDCoMKg
+wqDCoMKgICZsdDtodG1sJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqAgJmx0O2hlYWQmZ3Q7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDt0aXRsZSZndDtDdXN0b21lciBQcm9maWxl
+Jmx0Oy90aXRsZSZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0O2xpbms8YnI+
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBocmVmPSYjMzk7PGEgaHJlZj0iaHR0cHM6Ly9jZG4uanNk
+ZWxpdnIubmV0L25wbS9ib290c3RyYXBANS4zLjIvZGlzdC9jc3MvYm9vdHN0cmFwLm1pbi5jc3Mi
+Pmh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vYm9vdHN0cmFwQDUuMy4yL2Rpc3QvY3NzL2Jv
+b3RzdHJhcC5taW4uY3NzPC9hPiYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVsPSYj
+Mzk7c3R5bGVzaGVldCYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmd0Ozxicj48YnI+
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7c3R5bGUmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqAgYm9keXs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIGJhY2tncm91bmQ6IzExMTs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgY29sb3I6d2hpdGU7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgfTxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC5wcm9maWxl
+LWJveHs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGJhY2tn
+cm91bmQ6IzFjMWMxYzs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Ym9yZGVyOjJweCBzb2xpZCBnb2xkOzxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCBib3JkZXItcmFkaXVzOjE1cHg7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIHBhZGRpbmc6MzBweDs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgbWFyZ2luLXRvcDo1MHB4Ozxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCBib3gtc2hhZG93OjBweCAwcHggMTVweCByZ2JhKDI1NSwyMTUsMCwwLjMp
+Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH08YnI+PGJyPsKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAudGl0bGV7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBjb2xvcjpnb2xkOzxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBmb250LXdlaWdodDpib2xkOzxicj48YnI+wqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIH08YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAu
+YnRuLXNhdmV7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBi
+YWNrZ3JvdW5kOmdvbGQ7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IGNvbG9yOmJsYWNrOzxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBm
+b250LXdlaWdodDpib2xkOzxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH08
+YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAuYnRuLXNhdmU6aG92ZXJ7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBiYWNrZ3JvdW5kOmRh
+cmtnb2xkZW5yb2Q7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNv
+bG9yOndoaXRlOzxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH08YnI+PGJy
+PsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0Oy9zdHlsZSZndDs8YnI+PGJyPsKgwqDCoMKgwqDC
+oMKgICZsdDsvaGVhZCZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgICZsdDtib2R5Jmd0Ozxicj48
+YnI+wqDCoMKgwqDCoMKgwqAgJmx0O2RpdiBjbGFzcz0mIzM5O2NvbnRhaW5lciYjMzk7Jmd0Ozxi
+cj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7ZGl2IGNsYXNzPSYjMzk7cm93IGp1c3Rp
+ZnktY29udGVudC1jZW50ZXImIzM5OyZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCAmbHQ7ZGl2IGNsYXNzPSYjMzk7Y29sLW1kLTcmIzM5OyZndDs8YnI+PGJyPsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtkaXYgY2xhc3M9JiMzOTtwcm9m
+aWxlLWJveCYjMzk7Jmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCAmbHQ7aDIgY2xhc3M9JiMzOTt0aXRsZSB0ZXh0LWNlbnRlciBtYi00JiMz
+OTsmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgQ3VzdG9tZXIgUHJvZmlsZTxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7L2gyJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7Zm9ybTxicj7CoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgYWN0aW9uPSYjMzk7
+cHJvY2Vzc2VzL3Byb2ZpbGVwcm9jZXNzLnBocCYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBtZXRob2Q9JiMzOTtQT1NUJiMzOTs8
+YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmZ3Q7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgJmx0O2RpdiBjbGFzcz0mIzM5O21iLTMmIzM5OyZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtsYWJl
+bCZndDs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBGdWxsIE5hbWU8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0Oy9sYWJlbCZndDs8
+YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgICZsdDtpbnB1dDxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHR5cGU9JiMzOTt0ZXh0JiMz
+OTs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBuYW1lPSYjMzk7ZnVsbG5hbWUmIzM5Ozxicj7CoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIGNsYXNzPSYjMzk7Zm9ybS1jb250cm9sJiMzOTs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbGFjZWhv
+bGRlcj0mIzM5O0VudGVyIEZ1bGwgTmFtZSYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZndDs8YnI+PGJyPsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7L2Rp
+diZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCAmbHQ7ZGl2IGNsYXNzPSYjMzk7bWItMyYjMzk7Jmd0Ozxicj48YnI+wqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Jmx0O2xhYmVsJmd0Ozxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIFBob25lIE51bWJlcjxicj7CoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7
+L2xhYmVsJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0O2lucHV0PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdHlwZT0m
+IzM5O3RleHQmIzM5Ozxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG5hbWU9JiMzOTtwaG9uZSYjMzk7PGJyPsKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgY2xhc3M9JiMzOTtmb3JtLWNvbnRyb2wmIzM5Ozxicj7CoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IHBsYWNlaG9sZGVyPSYjMzk7RW50ZXIgUGhvbmUgTnVtYmVyJiMzOTs8YnI+wqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmd0Ozxi
+cj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgICZsdDsvZGl2Jmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtkaXYgY2xhc3M9JiMzOTttYi0zJiMzOTsmZ3Q7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCAmbHQ7bGFiZWwmZ3Q7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgR2VuZGVyPGJyPsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+ICZsdDsvbGFiZWwmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7c2VsZWN0PGJyPsKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+bmFtZT0mIzM5O2dlbmRlciYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY2xhc3M9JiMzOTtmb3JtLWNv
+bnRyb2wmIzM5Ozxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCAmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtvcHRpb24g
+dmFsdWU9JiMzOTsmIzM5OyZndDs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIFNlbGVjdCBHZW5k
+ZXI8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7L29wdGlvbiZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Jmx0O29wdGlvbiZndDs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIE1hbGU8YnI+wqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCAmbHQ7L29wdGlvbiZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0O29wdGlvbiZndDs8
+YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIEZlbWFsZTxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDsvb3B0
+aW9uJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0Oy9zZWxlY3QmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0Oy9kaXYmZ3Q7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgJmx0O2RpdiBjbGFzcz0mIzM5O21iLTMmIzM5OyZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtsYWJl
+bCZndDs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBBZGRyZXNzPGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDsvbGFiZWwmZ3Q7PGJy
+Pjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCAmbHQ7dGV4dGFyZWE8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBuYW1lPSYjMzk7YWRkcmVz
+cyYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY2xhc3M9JiMzOTtmb3JtLWNvbnRyb2wmIzM5Ozxicj7C
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIHBsYWNlaG9sZGVyPSYjMzk7RW50ZXIgQWRkcmVzcyYjMzk7PGJyPsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+ICZndDsmbHQ7L3RleHRhcmVhJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDsvZGl2Jmd0Ozxicj48YnI+wqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtkaXYgY2xh
+c3M9JiMzOTttYi0zJiMzOTsmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7bGFiZWwmZ3Q7PGJyPsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgQ291bnRyeTxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmbHQ7L2xhYmVsJmd0Ozxicj48YnI+wqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0
+O2lucHV0PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdHlwZT0mIzM5O3RleHQmIzM5Ozxicj7CoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIG5hbWU9JiMzOTtjb3VudHJ5JiMzOTs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjbGFzcz0mIzM5O2Zv
+cm0tY29udHJvbCYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcGxhY2Vob2xkZXI9JiMzOTtFbnRlciBD
+b3VudHJ5JiMzOTs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDsvZGl2Jmd0Ozxicj48YnI+wqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZsdDtidXR0
+b248YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgdHlwZT0mIzM5O3N1Ym1pdCYjMzk7PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNsYXNzPSYjMzk7YnRu
+IGJ0bi1zYXZlIHctMTAwJiMzOTs8YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgICZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIFNhdmUgUHJvZmlsZTxicj48
+YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+ICZsdDsvYnV0dG9uJmd0Ozxicj48YnI+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCAmbHQ7L2Zvcm0mZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCAmbHQ7L2RpdiZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCAmbHQ7L2RpdiZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJmx0
+Oy9kaXYmZ3Q7PGJyPjxicj7CoMKgwqDCoMKgwqDCoCAmbHQ7L2RpdiZndDs8YnI+PGJyPsKgwqDC
+oMKgwqDCoMKgICZsdDsvYm9keSZndDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgICZsdDsvaHRtbCZn
+dDs8YnI+PGJyPsKgwqDCoMKgwqDCoMKgICZxdW90Ozs8YnI+PGJyPsKgwqDCoCB9PGJyPjxicj59
+PGJyPjxicj4kcHJvZmlsZSA9IG5ldyBDdXN0b21lclByb2ZpbGUoKTs8YnI+PGJyPiRwcm9maWxl
+LSZndDtkaXNwbGF5UHJvZmlsZUZvcm0oKTs8YnI+PGJyPj8mZ3Q7wqA8L2Rpdj4NCg==
+--00000000000011a9e00651af2292--
