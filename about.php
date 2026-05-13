@@ -3,180 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Velvet Street</title>
+    <title>About Us | VELVET STREET</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Poppins, sans-serif;
+        }
+
         body{
-            background-color:#0b0b0b;
-            color:#f5f5f5;
-            font-size:16px;
+            background:#0d0d0d;
+            color:white;
         }
 
         .navbar{
-            background-color:#000;
-            border-bottom:1px solid #b08d57;
+            background:#000;
+            border-bottom:1px solid rgba(212,175,55,0.2);
         }
 
-        .brand{
-            color:#b08d57 !important;
-            font-weight:bold;
-            letter-spacing:2px;
-            font-size:1.1rem;
+        .navbar .nav-link{
+            color:white !important;
+            margin-left:15px;
+        }
+
+        .navbar .nav-link:hover{
+            color:#d4af37 !important;
         }
 
         .hero{
-            padding:60px 15px;
+            min-height:60vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
             text-align:center;
-            background:linear-gradient(135deg,#000,#1a1a1a);
-            border-bottom:1px solid #b08d57;
+            background:
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+            url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+            padding:40px;
         }
 
         .hero h1{
-            color:#b08d57;
-            font-size:clamp(28px,5vw,50px);
-            font-weight:700;
+            font-size:60px;
+            color:#d4af37;
+            margin-bottom:20px;
         }
 
         .hero p{
-            font-size:clamp(14px,3.5vw,18px);
-            opacity:0.9;
+            max-width:700px;
+            margin:auto;
+            color:#ddd;
+            line-height:1.8;
         }
 
-        .section-title{
-            color:#b08d57;
-            margin-bottom:15px;
-            font-size:clamp(18px,4vw,26px);
+        .about-section{
+            padding:80px 6%;
         }
 
-        .card-dark{
-            background-color:#111;
-            border:1px solid #222;
-            border-radius:12px;
+        .about-title{
+            color:#d4af37;
+            margin-bottom:20px;
         }
 
-        .footer{
-            margin-top:40px;
-            padding:25px 15px;
+        .about-text{
+            color:#bbb;
+            line-height:1.9;
+        }
+
+        .info-card{
+            background:#161616;
+            border:1px solid rgba(212,175,55,0.15);
+            border-radius:20px;
+            padding:35px 25px;
             text-align:center;
-            border-top:1px solid #b08d57;
-            background-color:#000;
-            font-size:14px;
+            transition:0.3s;
+            height:100%;
         }
 
-        .search-box input{
-            background:#111;
-            border:1px solid #b08d57;
-            color:#fff;
+        .info-card:hover{
+            transform:translateY(-8px);
+            border-color:#d4af37;
         }
 
-        .search-box input::placeholder{
-            color:#aaa;
+        .info-card h4{
+            color:#d4af37;
+            margin-bottom:15px;
         }
 
-        /* MOBILE-FIRST IMPROVEMENTS */
-        @media (max-width: 768px){
-            .hero{
-                padding:40px 10px;
+        .info-card p{
+            color:#bbb;
+            line-height:1.7;
+        }
+
+        footer{
+            background:#000;
+            padding:25px;
+            text-align:center;
+            border-top:1px solid rgba(255,255,255,0.1);
+            color:#888;
+        }
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:40px;
             }
 
-            .navbar-nav{
-                text-align:center;
-            }
-
-            .search-box{
-                width:100%;
-                margin-top:10px;
-            }
         }
+
     </style>
+
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg px-3">
 
-    <a class="navbar-brand brand" href="products.php">VELVET STREET</a>
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container">
 
-    <div class="collapse navbar-collapse" id="nav">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.png" width="80" height="80" alt="logo">
+        </a>
 
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-            <li class="nav-item"><a class="nav-link text-light" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="about.php">About</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="login.php">login</a></li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <form class="d-flex search-box ms-lg-3 mt-2 mt-lg-0">
-            <input class="form-control me-2" type="search" placeholder="Search products...">
-            <button class="btn btn-outline-warning">Search</button>
-        </form>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.php">Shop</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.php">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+            </ul>
+
+        </div>
 
     </div>
+
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-    <h1>About Velvet Street</h1>
-    <p>Luxury streetwear. Bold identity. Timeless fashion.</p>
-</div>
 
-<!-- CONTENT -->
-<div class="container px-3 mt-4">
+<section class="hero">
 
-    <div class="text-center mb-4">
-        <h2 class="section-title">Who We Are</h2>
+    <div>
+
+        <h1>About VELVET STREET</h1>
+
         <p>
-            Velvet Street is a modern clothing brand built for individuals who express confidence through fashion.
-            We combine luxury aesthetics with street culture to create timeless pieces that stand out.
+            Luxury streetwear crafted for confidence, elegance, and modern fashion lovers.
         </p>
-    </div>
-
-    <div class="row g-3">
-
-        <div class="col-12 col-md-4">
-            <div class="card card-dark p-3 h-100">
-                <h4 class="section-title">Our Vision</h4>
-                <p>To become a global streetwear brand that defines modern luxury fashion.</p>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card card-dark p-3 h-100">
-                <h4 class="section-title">Our Mission</h4>
-                <p>To deliver high-quality, stylish, and affordable fashion for everyone.</p>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card card-dark p-3 h-100">
-                <h4 class="section-title">Our Style</h4>
-                <p>Black. Gold. Wine. A signature identity that reflects bold elegance.</p>
-            </div>
-        </div>
 
     </div>
 
-    <div class="text-center mt-5">
-        <h2 class="section-title">Why Choose Us</h2>
-        <p>
-            Every piece is carefully designed with attention to detail, comfort, and durability.
-            Velvet Street is not just clothing — it's a lifestyle.
-        </p>
+</section>
+
+<!-- ABOUT CONTENT -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop" class="img-fluid rounded-4">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <h2 class="about-title">Who We Are</h2>
+
+                <p class="about-text">
+                    VELVET STREET is a modern luxury fashion brand focused on blending premium streetwear with timeless elegance. We create fashion pieces designed for confidence, comfort, and individuality.
+                </p>
+
+                <p class="about-text mt-3">
+                    Our collections are inspired by urban culture, luxury aesthetics, and the desire to help people express their unique style through fashion.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+</section>
 
-<!-- FOOTER -->
-<div class="footer">
-    <p>© 2026 Velvet Street. All Rights Reserved.</p>
-    <p>Luxury Streetwear Brand</p>
-</div>
+<!-- VALUES -->
+
+<section class="pb-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Premium Quality</h4>
+                    <p>
+                        We use carefully selected materials to ensure durability, luxury, and comfort.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Modern Fashion</h4>
+                    <p>
+                        Our collections combine modern streetwear trends with timeless fashion styles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Customer Satisfaction</h4>
+                    <p>
+                        We are dedicated to giving customers a premium shopping experience.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 VELVET STREET. All Rights Reserved.
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-</
+</html>
