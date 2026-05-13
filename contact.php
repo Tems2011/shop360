@@ -1,149 +1,247 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Velvet Street</title>
+    <title>Contact Us | VELVET STREET</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Poppins, sans-serif;
+        }
+
         body{
-            background-color:#0b0b0b;
-            color:#f5f5f5;
-            font-size:16px;
+            background:#0d0d0d;
+            color:white;
         }
 
         .navbar{
-            background-color:#000;
-            border-bottom:1px solid #b08d57;
+            background:#000;
+            border-bottom:1px solid rgba(212,175,55,0.2);
         }
 
-        .brand{
-            color:#b08d57 !important;
-            font-weight:bold;
-            letter-spacing:2px;
+        .navbar .nav-link{
+            color:white !important;
+            margin-left:15px;
         }
 
-        .hero{
-            padding:60px 15px;
+        .navbar .nav-link:hover{
+            color:#d4af37 !important;
+        }
+
+        .contact-hero{
+            padding:80px 20px;
             text-align:center;
-            background:linear-gradient(135deg,#000,#1a1a1a);
-            border-bottom:1px solid #b08d57;
+            background:#111;
         }
 
-        .hero h1{
-            color:#b08d57;
-            font-size:clamp(28px,5vw,50px);
+        .contact-hero h1{
+            color:#d4af37;
+            font-size:55px;
+            margin-bottom:20px;
         }
 
-        .section-title{
-            color:#b08d57;
-            margin-bottom:15px;
+        .contact-hero p{
+            color:#bbb;
         }
 
-        .card-dark{
-            background-color:#111;
-            border:1px solid #222;
-            border-radius:12px;
+        .contact-section{
+            padding:80px 6%;
+        }
+
+        .contact-box{
+            background:#161616;
+            padding:40px;
+            border-radius:20px;
+            border:1px solid rgba(212,175,55,0.15);
+        }
+
+        .contact-box h3{
+            color:#d4af37;
+            margin-bottom:25px;
         }
 
         .form-control{
-            background:#111;
-            border:1px solid #333;
-            color:#fff;
+            background:#0d0d0d;
+            border:1px solid rgba(255,255,255,0.1);
+            color:white;
+            padding:14px;
         }
 
         .form-control:focus{
-            border-color:#b08d57;
+            background:#0d0d0d;
+            color:white;
+            border-color:#d4af37;
             box-shadow:none;
         }
 
-        .btn-gold{
-            background:#b08d57;
-            color:#000;
-            font-weight:600;
+        .btn-custom{
+            background:#5c0f24;
+            border:none;
+            color:white;
+            padding:14px;
+            width:100%;
+            border-radius:10px;
+            transition:0.3s;
         }
 
-        .btn-gold:hover{
-            background:#d1a866;
+        .btn-custom:hover{
+            background:#d4af37;
+            color:#111;
         }
 
-        .footer{
-            margin-top:40px;
-            padding:25px 15px;
+        .info-box{
+            background:#161616;
+            border-radius:20px;
+            padding:35px;
+            height:100%;
+            border:1px solid rgba(212,175,55,0.15);
+        }
+
+        .info-box h4{
+            color:#d4af37;
+            margin-bottom:20px;
+        }
+
+        .info-box p{
+            color:#bbb;
+            line-height:2;
+        }
+
+        footer{
+            background:#000;
+            padding:25px;
             text-align:center;
-            border-top:1px solid #b08d57;
-            background-color:#000;
+            border-top:1px solid rgba(255,255,255,0.1);
+            color:#888;
         }
 
-        /* MOBILE FIRST */
-        @media (max-width:768px){
-            .hero{
-                padding:40px 10px;
+        @media(max-width:768px){
+
+            .contact-hero h1{
+                font-size:40px;
             }
+
         }
+
     </style>
+
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg px-3">
 
-    <a class="navbar-brand brand" href="products.php">VELVET STREET</a>
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container">
 
-    <div class="collapse navbar-collapse" id="nav">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.png" width="80" height="80" alt="logo">
+        </a>
 
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link text-light" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="about.php">About</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="contact.php">Contact</a></li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.php">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.php">Contact</a></li>
+            </ul>
+
+        </div>
 
     </div>
+
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+
+<section class="contact-hero">
+
     <h1>Contact Us</h1>
-    <p>We are here to help you with orders, support and inquiries.</p>
-</div>
+
+    <p>
+        We'd love to hear from you. Reach out to us anytime.
+    </p>
+
+</section>
 
 <!-- CONTACT SECTION -->
-<div class="container mt-5 px-3">
 
-    <div class="row justify-content-center">
+<section class="contact-section">
 
-        <div class="col-12 col-md-8">
+    <div class="container">
 
-            <div class="card card-dark p-4">
+        <div class="row g-5">
 
-                <h3 class="section-title text-center">Send Us a Message</h3>
+            <div class="col-lg-7">
 
-                <form action="process/contact_process.php" method="POST">
+                <div class="contact-box">
 
-                    <div class="mb-3">
-                        <label class="form-label">Full Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
-                    </div>
+                    <h3>Send Us A Message</h3>
 
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-                    </div>
+                    <form>
 
-                    <div class="mb-3">
-                        <label class="form-label">Message</label>
-                        <textarea name="message" rows="5" class="form-control" placeholder="Write your message..." required></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Full Name">
+                        </div>
 
-                    <button type="submit" class="btn btn-gold w-100">Send Message</button>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                        </div>
 
-                </form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="6" placeholder="Your Message"></textarea>
+                        </div>
+
+                        <button class="btn-custom">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="info-box">
+
+                    <h4>Contact Information</h4>
+
+                    <p>
+                        📍 Lagos, Nigeria
+                    </p>
+
+                    <p>
+                        📞 +234 810 753 3097
+                    </p>
+
+                    <p>
+                        ✉ support@velvetstreet.com
+                    </p>
+
+                    <p>
+                        🕒 Monday - Saturday: 9AM - 7PM
+                    </p>
+
+                </div>
 
             </div>
 
@@ -151,14 +249,14 @@
 
     </div>
 
-</div>
+</section>
 
-<!-- FOOTER -->
-<div class="footer">
-    <p>© 2026 Velvet Street. All Rights Reserved.</p>
-    <p>Luxury Streetwear Brand</p>
-</div>
+<footer>
+    © 2026 VELVET STREET. All Rights Reserved.
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+```
