@@ -63,7 +63,7 @@ if(!isset($_SESSION['user_id'])){
 
         <?php } ?>
 
-        <form action="processes/profileprocess.php"
+        <form action="processes/profileprocesses.php"
               method="POST">
 
               <label for="firstname" class="form-label">First Name:</label>

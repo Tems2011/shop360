@@ -1,36 +1,39 @@
 <?php
+require "../config/db_connect.php";
 
-class Customer{
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit();
+}
 
-    private $pdo;
+if($_SERVER["REQUEST_METHOD"] === "POST"){
 
-    public function __construct($pdo){
+    $user_id = $_SESSION['user_id'];
 
-        $this->pdo = $pdo;
+    $firstname = trim($_POST['firstname'] ?? '');
+    $surname   = trim($_POST['surname'] ?? '');
+    $phone     = trim($_POST['phone'] ?? '');
+
+    if($firstname === '' || $surname === '' || $phone === ''){
+        die("All fields are required.");
     }
 
-    public function createProfile(
-        $user_id,
-        $firstname,
-        $surname,
-        $phone
-    ){
+    $sql = "UPDATE customers 
+            SET first_name = :firstname,
+                surname   = :surname,
+                phone     = :phone
+            WHERE id = :id";
 
-        $sql = "INSERT INTO customers
-                (user_id, firstname, surname, phone)
-                VALUES
-                (:user_id, :firstname, :surname, :phone)";
+    $stmt = $pdo->prepare($sql);
 
-        $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':firstname' => $firstname,
+        ':surname'   => $surname,
+        ':phone'     => $phone,
+        ':id'        => $user_id
+    ]);
 
-        return $stmt->execute([
-
-            ':user_id'   => $user_id,
-            ':firstname' => $firstname,
-            ':surname'   => $surname,
-            ':phone'     => $phone
-
-        ]);
-    }
+    header("Location: ../dashboard.php");
+    exit();
 }
 ?>

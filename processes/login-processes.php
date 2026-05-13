@@ -49,7 +49,7 @@ if (!$account){
 }
     $_SESSION['user_id'] = $account['id'];
 
-    header("Location:../products.php");
+    header("Location:../dashboard.php");
     exit();
     session_start();
 
