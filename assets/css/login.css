@@ -1,0 +1,108 @@
+/* Page Background */
+body{
+    background:#0f0f0f;
+    font-family:'Poppins', sans-serif;
+    color:white;
+}
+
+/* Login Box */
+.auth-box{
+    width:380px;
+    margin:70px auto;
+    background:#1c1c1c;
+    padding:30px;
+    border-radius:15px;
+    border:2px solid gold;
+    box-shadow:0 0 20px rgba(255,215,0,0.15);
+}
+
+/* Brand Styling */
+.brand h1{
+    text-align:center;
+    color:gold;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.brand p{
+    text-align:center;
+    font-size:12px;
+    color:#ccc;
+    margin-bottom:20px;
+}
+
+/* Title */
+.page-title h3{
+    text-align:center;
+    color:white;
+    margin-bottom:20px;
+}
+
+/* Labels */
+label.form-label{
+    color:white;
+    font-size:14px;
+}
+
+/* Inputs */
+.form-control{
+    background:#222;
+    border:1px solid #444;
+    color:white;
+    padding:10px;
+}
+
+.form-control::placeholder{
+    color:#aaa;
+}
+
+/* Focus */
+.form-control:focus{
+    background:#222;
+    color:white;
+    border-color:gold;
+    box-shadow:none;
+}
+
+/* Login Button */
+.btn-primary{
+    background:linear-gradient(to right, gold, #800020);
+    border:none;
+    padding:10px;
+    font-weight:600;
+}
+
+.btn-primary:hover{
+    opacity:0.9;
+}
+
+/* Message */
+.message{
+    background:#2a2a2a;
+    color:gold;
+    padding:10px;
+    margin-bottom:15px;
+    border-left:3px solid gold;
+    font-size:13px;
+}
+
+/* Register Link */
+.register-link{
+    text-align:center;
+    margin-top:15px;
+    font-size:13px;
+    color:#ccc;
+}
+
+.register-link a{
+    color:gold;
+    text-decoration:none;
+}
+
+.register-link a:hover{
+    text-decoration:underline;
+}
+
+
+
+

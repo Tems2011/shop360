@@ -1,0 +1,138 @@
+/* VELVET STREET PROFILE PAGE STYLING */
+
+body{
+    background:#111;
+    font-family:Arial, sans-serif;
+    color:white;
+}
+
+/* Main container */
+.profile-box{
+    width:380px;
+    margin:80px auto;
+    background:#1c1c1c;
+    padding:30px;
+    border-radius:15px;
+    border:2px solid gold;
+    box-shadow:0 0 20px rgba(255,215,0,0.25);
+}
+
+/* Title */
+.profile-box h2{
+    text-align:center;
+    color:gold;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* Labels */
+label{
+    color:white;
+    font-size:14px;
+    margin-bottom:5px;
+    display:block;
+}
+
+/* Inputs */
+.form-control{
+    background:#222;
+    border:1px solid #444;
+    color:white;
+    margin-bottom:15px;
+    padding:10px;
+    border-radius:8px;
+}
+
+/* Input placeholder */
+.form-control::placeholder{
+    color:#bbb;
+}
+
+/* Focus effect */
+.form-control:focus{
+    background:#222;
+    color:white;
+    border-color:gold;
+    box-shadow:0 0 8px rgba(255,215,0,0.3);
+    outline:none;
+}
+
+/* Button */
+.btn-save{
+    width:100%;
+    background:linear-gradient(to right, gold, #800020);
+    border:none;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+.btn-save:hover{
+    opacity:0.9;
+    transform:scale(1.02);
+}
+
+/* Alerts */
+.alert{
+    font-size:14px;
+    border-radius:8px;
+}
+
+
+
+
+
+  /* NAVBAR */
+
+        .navbar{
+            background:#000 !important;
+            padding:15px 6%;
+            border-bottom:1px solid rgba(212,175,55,0.2);
+        }
+
+        .navbar-brand img{
+            object-fit:contain;
+        }
+
+        .navbar-nav .nav-link{
+            color:white !important;
+            margin-left:15px;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        .navbar-nav .nav-link:hover{
+            color:#d4af37 !important;
+        }
+
+        .search-box{
+            display:flex;
+            align-items:center;
+            background:#141414;
+            border-radius:40px;
+            overflow:hidden;
+            border:1px solid #5c0f24;
+        }
+
+        .search-box input{
+            background:transparent;
+            border:none;
+            outline:none;
+            color:white;
+            padding:10px 15px;
+            width:220px;
+        }
+
+        .search-box button{
+            border:none;
+            padding:10px 18px;
+            background:#5c0f24;
+            color:#d4af37;
+            font-weight:500;
+        }
+
+        .search-box button:hover{
+            background:#7c1734;
+        }
