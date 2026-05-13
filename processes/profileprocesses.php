@@ -39,6 +39,6 @@ if(isset($_POST['save_profile'])){
 
     $_SESSION['error'] = "Profile Creation Failed";
 
-    header("Location: ../customer/customer-profile.php");
+    header("Location: ../customer-profile.php");
     exit();
 }
