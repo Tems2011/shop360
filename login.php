@@ -50,7 +50,7 @@ session_start();
     </form>
 
     <div class="register-link">
-        Don’t have an account? <a href="registration.php">Create Account</a>
+        Don't have an account? <a href="registration.php">Create Account</a>
     </div>
 
 </div>
