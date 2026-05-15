@@ -102,7 +102,118 @@ label.form-label{
 .register-link a:hover{
     text-decoration:underline;
 }
+body {
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
 
+/* AUTH BOX */
+.auth-box {
+    width: 100%;
+    max-width: 460px;
+    background: rgba(17, 17, 17, 0.95);
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 40px;
+    color: #fff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+}
 
+/* BRAND */
+.brand {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.brand h1 {
+    font-size: 30px;
+    color: gold;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.brand p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* TITLE */
+.page-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-title h3 {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* FORM */
+.form-control {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: gold;
+    box-shadow: none;
+    background: #1b1b1b;
+    color: #fff;
+}
+
+/* BUTTON */
+.btn-primary {
+    background: gold;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #d4af37;
+    transform: scale(1.02);
+}
+
+/* MESSAGE */
+.message {
+    background: rgba(0, 255, 100, 0.1);
+    border: 1px solid rgba(0, 255, 100, 0.3);
+    color: #7CFF9B;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* LINKS */
+.register-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.register-link a {
+    color: gold;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

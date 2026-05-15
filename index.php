@@ -49,14 +49,17 @@ session_start();
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
 
-            <form class="search-box">
-                <input type="text" placeholder="Search products...">
-                <button type="submit">Search</button>
-            </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+           
 
         </div>
 
@@ -77,8 +80,7 @@ session_start();
         </p>
 
         <div class="hero-buttons">
-            <button class="btn-custom btn-shop">Shop Now</button>
-            <button class="btn-custom btn-collection">Explore Collections</button>
+            <a href="products.php" class="btn btn-warning">Shop Now</a>
         </div>
 
     </div>
@@ -218,11 +220,11 @@ session_start();
             <h4 class="footer-title">Quick Links</h4>
 
             <div class="footer-links d-flex flex-column">
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">Collections</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
+                <a href="index.php">Home</a>
+                <a href="products.php">Shop</a>
+                <a href="login.php">Login</a>
+                <a href="about.php">About Us</a>
+                <a href="contact.php">Contact</a>
             </div>
 
         </div>

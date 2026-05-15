@@ -1,44 +1,75 @@
 <?php
+
 session_start();
+
 require_once "../config/db_connect.php";
 
+require_once "../classes/Customer.php";
+
+
 if (!isset($_SESSION['user_id']) || $_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../customer-profile.php");
+
+    header("Location: ../customerprofile.php");
     exit();
 }
 
-$user_id   = $_SESSION['user_id'];
+
+$account_id = $_SESSION['user_id'];
+
 $firstname = trim($_POST['firstname'] ?? '');
-$surname   = trim($_POST['surname'] ?? '');
-$phone     = trim($_POST['phone'] ?? '');
+
+$surname = trim($_POST['surname'] ?? '');
+
+$phone = trim($_POST['phone'] ?? '');
+
 
 if (empty($firstname) || empty($surname) || empty($phone)) {
+
     $_SESSION['error'] = "All fields are required.";
-    header("Location: ../customer-profile.php");
+
+    header("Location: ../customerprofile.php");
+
     exit();
 }
 
+
 try {
-    $sql = "UPDATE customers 
-            SET firstname = :firstname, 
-                surname   = :surname, 
-                phone     = :phone 
-            WHERE id = :id";
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        ':firstname' => $firstname,
-        ':surname'   => $surname,
-        ':phone'     => $phone,
-        ':id'        => $user_id
-    ]);
+    $customer = new Customer();
 
-    $_SESSION['success'] = "Profile updated successfully!";
-    header("Location: ../customer-profile.php");
+    $save = $customer->saveCustomerProfile(
+        $pdo,
+        $account_id,
+        $firstname,
+        $surname,
+        $phone
+    );
 
-} catch (PDOException $e) {
-    $_SESSION['error'] = "Update failed. Please try again.";
-    header("Location: ../customer-profile.php");
+
+    if($save){
+
+        $_SESSION['success'] = "Profile updated successfully!";
+
+        header("Location: ../customerdashboard.php");
+
+        exit();
+
+    } else {
+
+        $_SESSION['error'] = "Profile update failed.";
+
+        header("Location: ../customerprofile.php");
+
+        exit();
+    }
+
+} catch(PDOException $e){
+
+    $_SESSION['error'] = $e->getMessage();
+
+    header("Location: ../customerprofile.php");
+
+    exit();
 }
-exit();
+
 ?>

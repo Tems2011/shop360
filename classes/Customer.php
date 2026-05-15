@@ -1,39 +1,63 @@
 <?php
-require "../config/db_connect.php";
 
-if(!isset($_SESSION['user_id'])){
-    header("Location: login.php");
-    exit();
-}
+class Customer {
 
-if($_SERVER["REQUEST_METHOD"] === "POST"){
+    // SAVE OR UPDATE CUSTOMER PROFILE
 
-    $user_id = $_SESSION['user_id'];
+    public function saveCustomerProfile($pdo, $account_id, $firstname, $surname, $phone){
 
-    $firstname = trim($_POST['firstname'] ?? '');
-    $surname   = trim($_POST['surname'] ?? '');
-    $phone     = trim($_POST['phone'] ?? '');
+        $checkSql = "SELECT * FROM customers WHERE account_id = ?";
 
-    if($firstname === '' || $surname === '' || $phone === ''){
-        die("All fields are required.");
+        $checkStmt = $pdo->prepare($checkSql);
+
+        $checkStmt->execute([$account_id]);
+
+        if($checkStmt->rowCount() > 0){
+
+            $updateSql = "UPDATE customers
+                          SET first_name = ?, surname = ?, phone = ?
+                          WHERE account_id = ?";
+
+            $updateStmt = $pdo->prepare($updateSql);
+
+            return $updateStmt->execute([
+                $firstname,
+                $surname,
+                $phone,
+                $account_id
+            ]);
+
+        } else {
+
+            $insertSql = "INSERT INTO customers(account_id, first_name, surname, phone)
+                          VALUES(?, ?, ?, ?)";
+
+            $insertStmt = $pdo->prepare($insertSql);
+
+            return $insertStmt->execute([
+                $account_id,
+                $firstname,
+                $surname,
+                $phone
+            ]);
+        }
     }
 
-    $sql = "UPDATE customers 
-            SET first_name = :firstname,
-                surname   = :surname,
-                phone     = :phone
-            WHERE id = :id";
 
-    $stmt = $pdo->prepare($sql);
 
-    $stmt->execute([
-        ':firstname' => $firstname,
-        ':surname'   => $surname,
-        ':phone'     => $phone,
-        ':id'        => $user_id
-    ]);
+    // GET CUSTOMER PROFILE
 
-    header("Location: ../dashboard.php");
-    exit();
+    public function getCustomerProfile($pdo, $account_id){
+
+        $sql = "SELECT * FROM customers WHERE account_id = ?";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([$account_id]);
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 }
+
 ?>

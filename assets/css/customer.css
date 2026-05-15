@@ -1,0 +1,234 @@
+/* =========================
+   GLOBAL BACKGROUND (VELVET STREET)
+========================= */
+body {
+    background: radial-gradient(circle at top, #1a1a1a, #0d0d0d 60%, #000);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 20px;
+}
+
+/* =========================
+   AUTH BOX (LOGIN / REGISTER)
+========================= */
+.auth-box {
+    width: 100%;
+    max-width: 460px;
+    margin: 70px auto;
+
+    background: linear-gradient(145deg, #141414, #0b0b0b);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.7),
+        inset 0 0 20px rgba(255, 215, 0, 0.03);
+
+    backdrop-filter: blur(10px);
+}
+
+/* =========================
+   BRAND / LOGIN HEADER
+========================= */
+.brand {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brand h1 {
+    font-size: 30px;
+    color: gold;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.brand p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+.page-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-title h3 {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* =========================
+   INPUTS (GLOBAL)
+========================= */
+.form-control {
+    width: 100%;
+    background: #111;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-control::placeholder {
+    color: #777;
+}
+
+.form-control:focus {
+    border-color: gold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
+}
+
+/* =========================
+   BUTTON (LOGIN STYLE)
+========================= */
+.btn-primary {
+    width: 100%;
+    background: gold;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MESSAGE BOX
+========================= */
+.message {
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    color: gold;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* =========================
+   REGISTER LINK
+========================= */
+.register-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.register-link a {
+    color: gold;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   PROFILE FORM PAGE (VELVET STREET STYLE)
+========================================================= */
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 80px auto;
+
+    background: linear-gradient(145deg, #141414, #0b0b0b);
+    padding: 30px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.6),
+        inset 0 0 15px rgba(255, 215, 0, 0.03);
+}
+
+/* TITLE */
+.form-container h1 {
+    text-align: center;
+    color: gold;
+    margin-bottom: 25px;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+/* INPUT FIELDS */
+.form-container input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+
+    background: #111;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+
+    border-radius: 10px;
+    color: #fff;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-container input:focus {
+    border-color: gold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
+}
+
+/* BUTTON */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+
+    background: gold;
+    color: #000;
+
+    border: none;
+    border-radius: 10px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* ERROR MESSAGE */
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .auth-box,
+    .form-container {
+        margin: 40px 15px;
+        padding: 20px;
+    }
+}

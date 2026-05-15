@@ -9,107 +9,15 @@ session_start();
     <title>Velvet Street | Create Account</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href= "assets/css/registration.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-            url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .auth-box {
-            width: 100%;
-            max-width: 460px;
-            background: #111;
-            border: 1px solid #2a2a2a;
-            border-radius: 14px;
-            padding: 35px;
-            color: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-        }
-
-        .brand {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .brand h1 {
-            font-size: 28px;
-            color: gold;
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-        }
-
-        .brand p {
-            font-size: 13px;
-            color: #aaa;
-        }
-
-        .page-title {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .page-title h3 {
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .form-control {
-            background: #1b1b1b;
-            border: 1px solid #333;
-            color: #fff;
-        }
-
-        .form-control:focus {
-            border-color: gold;
-            box-shadow: none;
-        }
-
-        .btn-primary {
-            background: gold;
-            border: none;
-            color: #000;
-            font-weight: bold;
-            padding: 10px;
-        }
-
-        .btn-primary:hover {
-            background: #d4af37;
-        }
-
-        .error {
-            color: #ff4d4d;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        .login-link a {
-            color: gold;
-            text-decoration: none;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+       
 </head>
 
 <body>
+    
 
 <div class="auth-box">
 
@@ -146,6 +54,10 @@ session_start();
 
     <div class="login-link">
         Already have an account? <a href="login.php">Login</a>
+    </div>
+
+    <div class="login-link">
+       <a href="index.php">Home</a>
     </div>
 
 </div>
