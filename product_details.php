@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+
+if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
 }
@@ -13,6 +14,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 }
 
 $id = (int)$_GET['id'];
+
 $productInstance = new Product();
 $product = $productInstance->getProductById($pdo, $id);
 
@@ -20,93 +22,144 @@ if (!$product) {
     die("Product not found");
 }
 
-$mainImage = $product['featured_image'] ?? 'assets/images/no-image.jpg';
-
-// Handle Add to Cart
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
-    $quantity = max(1, (int)($_POST['quantity'] ?? 1));
-    
-    if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
-    
-    $found = false;
-    foreach ($_SESSION['cart'] as &$item) {
-        if ($item['id'] == $product['id']) {
-            $item['quantity'] += $quantity;
-            $found = true;
-            break;
-        }
-    }
-    
-    if (!$found) {
-        $_SESSION['cart'][] = [
-            'id'       => $product['id'],
-            'name'     => $product['product_name'],
-            'price'    => $product['product_price'],
-            'image'    => $mainImage,
-            'quantity' => $quantity
-        ];
-    }
-    
-    $success = "✅ {$product['product_name']} added to cart!";
-}
-
 $page_title = htmlspecialchars($product['product_name'] ?? 'Product Details');
-include "includes/header.php";
+
+include "include/header.php";
+
+/* =========================
+   MULTIPLE IMAGES SUPPORT
+========================= */
+$images = !empty($product['featured_image'])
+    ? explode(',', $product['featured_image'])
+    : ['assets/images/no-image.jpg'];
+
+$mainImage = $images[0];
 ?>
 
+<link rel="stylesheet" href="assets/css/product-details.css">
+
 <div class="container py-5">
-    <?php if (isset($success)): ?>
-        <div class="alert alert-success"><?= $success ?></div>
+
+    <!-- ALERTS -->
+    <?php if (isset($_SESSION['success'])): ?>
+        <div class="alert alert-success rounded-4 shadow-sm">
+            <?= $_SESSION['success']; unset($_SESSION['success']); ?>
+        </div>
     <?php endif; ?>
 
-    <div class="row g-5 bg-dark border border-secondary rounded-4 overflow-hidden">
-        <!-- Images -->
-        <div class="col-lg-6 p-4">
-            <img id="mainImage" src="<?= htmlspecialchars($mainImage) ?>" 
-                 class="img-fluid rounded-4" style="width:100%; height:520px; object-fit:cover;" alt="">
-            
-            <?php if (!empty($product['images'])): ?>
-            <div class="d-flex gap-3 mt-4 flex-wrap">
-                <?php foreach($product['images'] as $i => $img): ?>
-                    <img src="<?= htmlspecialchars($img['image_path']) ?>" 
-                         class="thumbnail rounded <?= $i===0 ? 'active' : '' ?>" 
-                         style="width:80px; height:80px; object-fit:cover; cursor:pointer; border:3px solid transparent;"
-                         onclick="changeImage(this)">
-                <?php endforeach; ?>
-            </div>
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger rounded-4 shadow-sm">
+            <?= $_SESSION['error']; unset($_SESSION['error']); ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- PRODUCT CARD -->
+    <div class="row g-0 shadow-lg product-card">
+
+        <!-- IMAGE SECTION -->
+        <div class="col-lg-6 product-image-section">
+
+            <!-- MAIN IMAGE -->
+            <img
+                id="mainProductImage"
+                src="<?= htmlspecialchars($mainImage) ?>"
+                alt="<?= htmlspecialchars($product['product_name']) ?>"
+                class="product-main-image"
+            >
+
+            <!-- CATEGORY BADGE -->
+            <span class="product-badge">
+                <?= htmlspecialchars($product['product_category'] ?? 'Luxury Fashion') ?>
+            </span>
+
+            <!-- THUMBNAILS UNDER IMAGE -->
+            <?php if (count($images) > 1): ?>
+                <div class="product-thumbnails">
+                    <?php foreach ($images as $img): ?>
+                        <img
+                            src="<?= htmlspecialchars(trim($img)) ?>"
+                            class="thumb-image"
+                            onclick="document.getElementById('mainProductImage').src=this.src"
+                        >
+                    <?php endforeach; ?>
+                </div>
             <?php endif; ?>
+
         </div>
 
-        <!-- Details -->
+        <!-- DETAILS SECTION -->
         <div class="col-lg-6">
-            <div class="p-4 p-lg-5">
-                <p class="text-warning"><?= htmlspecialchars($product['product_category'] ?? '') ?></p>
-                <h1 class="display-5 fw-bold"><?= htmlspecialchars($product['product_name'] ?? '') ?></h1>
-                <h2 class="text-gold fs-1 fw-bold">₦<?= number_format($product['product_price'] ?? 0, 2) ?></h2>
-                
-                <p class="lead mt-4"><?= nl2br(htmlspecialchars($product['product_description'] ?? '')) ?></p>
+            <div class="p-4 p-lg-5 d-flex flex-column h-100">
 
-                <form method="POST" class="mt-4">
-                    <div class="d-flex gap-3 align-items-center">
-                        <input type="number" name="quantity" value="1" min="1" class="form-control" style="width:120px;">
-                        <button type="submit" name="add_to_cart" class="btn btn-gold btn-lg px-5">
-                            Add to Cart
-                        </button>
+                <h1 class="product-title mb-3">
+                    <?= htmlspecialchars($product['product_name']) ?>
+                </h1>
+
+                <h2 class="product-price mb-4">
+                    ₦<?= number_format((float)$product['product_price'], 2) ?>
+                </h2>
+
+                <div class="mb-4">
+                    <h5 class="product-section-title mb-3">
+                        Product Description
+                    </h5>
+
+                    <p class="product-description">
+                        <?= nl2br(htmlspecialchars($product['product_description'])) ?>
+                    </p>
+                </div>
+
+                <hr>
+
+                <!-- ORDER FORM -->
+                <form action="place-order.php" method="POST">
+
+                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                    <input type="hidden" name="price" value="<?= $product['product_price'] ?>">
+
+                    <div class="mb-3">
+                        <label class="form-label text-light">Quantity</label>
+                        <input type="number" name="quantity"
+                               class="form-control product-input"
+                               value="1" min="1" required>
                     </div>
+
+                    <div class="mb-3">
+                        <label class="form-label text-light">Shipping Address</label>
+                        <textarea name="shipping_address"
+                                  rows="3"
+                                  class="form-control product-textarea"
+                                  required></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-light">Payment Type</label>
+                        <select name="payment_type"
+                                class="form-select product-select"
+                                required>
+                            <option value="">Select Payment Method</option>
+                            <option value="Cash on Delivery">Cash on Delivery</option>
+                            <option value="Card">Card</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn w-100 py-3 fw-bold btn-gold">
+                        Place Order
+                    </button>
+
                 </form>
 
-                <a href="products.php" class="btn btn-outline-light mt-4">← Back to Shop</a>
+                <a href="products.php"
+                   class="btn w-100 mt-3 py-3 fw-semibold btn-outline-custom">
+                    ← Back to Shop
+                </a>
+
             </div>
         </div>
+
     </div>
+
 </div>
 
-<script>
-function changeImage(thumb) {
-    document.getElementById('mainImage').src = thumb.src;
-    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
-}
-</script>
-
-<?php include "includes/footer.php"; ?>
+<?php include "include/footer.php"; ?>

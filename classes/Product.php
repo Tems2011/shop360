@@ -1,5 +1,11 @@
 <?php
 class Product {
+    public function getAllProducts($pdo) {
+        $sql = "SELECT * FROM products ORDER BY id DESC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function getProductWithImages($pdo) {
         $sql = "
@@ -43,6 +49,7 @@ class Product {
 
         return $product;
     }
+    
 
     // New: Search & Filter
     public function searchProducts($pdo, $keyword = '', $category = '') {
@@ -71,4 +78,11 @@ class Product {
         $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    //edit product
+    public function editproduct ($pdo, $id, $name, $description, $price, $category) {
+        $sql = "UPDATE products SET product_name = ?, product_description = ?, product_price = ?, product_category = ? WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        return $stmt->execute([$name, $description, $price, $category, $id]);
+    }
+
 }

@@ -1,0 +1,388 @@
+/* =========================
+   VELVET STREET ADMIN CSS
+   ========================= */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ADMIN LAYOUT
+   ========================= */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar {
+    width: 250px;
+    background: #0a0a0a;
+    border-right: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo h2 {
+    color: #d4af37;
+    letter-spacing: 3px;
+    font-size: 22px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #bbb;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 14px;
+    border: 1px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    transform: translateX(5px);
+}
+
+.sidebar-menu a.active {
+    background: #141414;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    width: calc(100% - 250px);
+}
+
+/* =========================
+   DASHBOARD HEADER
+   ========================= */
+
+.admin-header {
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    font-size: 32px;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.admin-header p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* =========================
+   DASHBOARD CARDS
+   ========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.stat-label {
+    color: #bbb;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* =========================
+   TABLES
+   ========================= */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #141414;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.admin-table th {
+    background: #0f0f0f;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.admin-table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.admin-table tr:hover {
+    background: #1a1a1a;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #5c0f24;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+.btn-secondary:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+/* =========================
+   FORMS
+   ========================= */
+
+.admin-form {
+    background: #141414;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #0f0f0f;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #d4af37;
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+
+.text-gold {
+    color: #d4af37;
+}
+
+.text-muted {
+    color: #aaa;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* =========================
+   ADMIN CONTENT WRAPPER
+========================= */
+.admin-content {
+    margin-left: 260px;
+    padding: 30px;
+    background: #0d0d0d;
+    min-height: 100vh;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+.admin-content h1 {
+    color: #d4af37;
+    margin-bottom: 25px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   ORDERS TABLE
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #141414;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* TABLE HEADER */
+table th {
+    background: #5c0f24;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* TABLE ROWS */
+table td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* ROW HOVER EFFECT */
+table tr:hover {
+    background: rgba(212, 175, 55, 0.05);
+    transition: 0.3s;
+}
+
+/* =========================
+   STATUS DROPDOWN
+========================= */
+select {
+    padding: 10px;
+    background: #1a1a1a;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: white;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #d4af37;
+}
+
+/* =========================
+   UPDATE BUTTON
+========================= */
+button {
+    padding: 10px 14px;
+    background: #5c0f24;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+button:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+/* =========================
+   FORM INSIDE TABLE CELL
+========================= */
+form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* =========================
+   RESPONSIVE SCROLL (TABLE)
+========================= */
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
