@@ -1,80 +1,53 @@
 <?php
-
-
-
 session_start();
+$page_title = "Shop - Velvet Street";
+include "includes/header.php";
 
 require_once "config/db_connect.php";
 require_once "classes/Product.php";
 
 $productInstance = new Product();
-
-$products = $productInstance->displayProducts($pdo);
-
+$products = $productInstance->getProductWithImages($pdo);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELVET STREET | Products</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-</head>
-<body>
-
-<div class="container">
-
-    <!-- HEADER -->
-    <div class="header">
-        <h1>VELVET STREET</h1>
-        <p>Luxury Fashion & Streetwear Collection</p>
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Our Collection</h1>
+        <p class="lead text-light-emphasis">Premium Streetwear & Luxury Fashion</p>
     </div>
 
-    <!-- PRODUCTS -->
-    <div class="row">
-
-        <?php foreach($products as $product): ?>
-
-            <div class="col-md-4 mb-4">
-
-                <div class="card h-100 p-3">
-
-                    <div class="card-body">
-
-                        <h5 class="card-title">
-                            <?= $product['product_name']; ?>
-                        </h5>
-
-                        <p class="price">
-                            ₦<?= $product['product_price']; ?>
-                        </p>
-
-                        <p class="text-secondary">
-                            <?= $product['product_category']; ?>
-                        </p>
-
-                        <a href="product_details.php?id=<?= $product['id']; ?>" class="btn btn-primary w-100">
-                            View Details
-                        </a>
-
+    <?php if (empty($products)): ?>
+        <div class="text-center py-5">
+            <h3>No products available at the moment</h3>
+            <p>Please check back later.</p>
+        </div>
+    <?php else: ?>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+            <?php foreach ($products as $product): ?>
+                <div class="col">
+                    <div class="card h-100 bg-dark border-secondary text-white">
+                        <img src="<?= htmlspecialchars($product['featured_image'] ?? 'assets/images/no-image.jpg') ?>" 
+                             class="product-img" 
+                             alt="<?= htmlspecialchars($product['product_name'] ?? '') ?>">
+                        
+                        <div class="card-body d-flex flex-column">
+                            <p class="text-warning small mb-1">
+                                <?= htmlspecialchars($product['product_category'] ?? 'Uncategorized') ?>
+                            </p>
+                            <h5 class="card-title"><?= htmlspecialchars($product['product_name'] ?? 'Unnamed Product') ?></h5>
+                            
+                            <p class="price text-gold fs-4 fw-bold mt-auto">
+                                $<?= number_format($product['product_price'] ?? 0, 2) ?>
+                            </p>
+                            
+                            <a href="product_details.php?id=<?= (int)$product['id'] ?>" 
+                               class="btn btn-outline-light mt-3">View Details</a>
+                        </div>
                     </div>
-
                 </div>
-
-            </div>
-
-        <?php endforeach; ?>
-
-    </div>
-
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php include "includes/footer.php"; ?>
